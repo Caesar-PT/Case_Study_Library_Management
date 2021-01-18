@@ -37,15 +37,8 @@ public class MemberManager {
         System.out.println("Không tìm thấy member");
     }
 
-    public LocalDate setDate() {
-        System.out.println("Nhập ngày");
-        int day = scanner.nextInt();
-        System.out.println("Nhập tháng");
-        int month = scanner.nextInt();
-        System.out.println("Nhập năm");
-        int year = scanner.nextInt();
-
-        return LocalDate.of(year, month, day);
+    public LocalDate setDate(String localDate) {
+        return LocalDate.parse(localDate);
     }
 
     public void setInfoMember(Member member) {
@@ -57,7 +50,7 @@ public class MemberManager {
         member.setAddress(scanner.nextLine());
         System.out.println("Nhập số điện thoại");
         member.setPhone(scanner.nextLine());
-        System.out.println("Nhập ngày gia nhập");
-        member.setJoinDate(setDate());
+        System.out.println("Nhập ngày gia nhập yyyy-MM-dd");
+        member.setJoinDate(setDate(scanner.nextLine()));
     }
 }
