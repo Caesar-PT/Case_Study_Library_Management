@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Member extends Person {
     private LocalDate joinDate;
+    private String memberType;
 
     public Member() {
     }
@@ -41,14 +42,28 @@ public class Member extends Person {
         this.joinDate = joinDate;
     }
 
+    public Member withMemberType(String memberType){
+        this.memberType = memberType;
+        return this;
+    }
+
     public Member build() {
         return this;
+    }
+
+    public String getMemberType() {
+        return memberType;
+    }
+
+    public void setMemberType(String memberType) {
+        this.memberType = memberType;
     }
 
     @Override
     public String toString() {
         return "Member{" +
                 "joinDate=" + joinDate +
+                ", memberType='" + memberType + '\'' +
                 '}';
     }
 }

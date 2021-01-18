@@ -6,16 +6,9 @@ public class Book {
     private String category;
     private String author;
     private double price;
+    private double amount;
 
     public Book() {
-    }
-
-    public Book(int idBook, String nameBook, String category, String author, double price) {
-        this.idBook = idBook;
-        this.nameBook = nameBook;
-        this.category = category;
-        this.author = author;
-        this.price = price;
     }
 
     public int getIdBook() {
@@ -56,6 +49,18 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public double getSumPriceBook(){
+        return price * amount;
     }
 
     @Override
