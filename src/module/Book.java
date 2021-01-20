@@ -1,6 +1,8 @@
 package module;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable{
     private int idBook;
     private String nameBook;
     private String category;
@@ -9,6 +11,15 @@ public class Book {
     private double amount;
 
     public Book() {
+    }
+
+    public Book(int idBook, String nameBook, String category, String author, double price, double amount) {
+        this.idBook = idBook;
+        this.nameBook = nameBook;
+        this.category = category;
+        this.author = author;
+        this.price = price;
+        this.amount = amount;
     }
 
     public int getIdBook() {
@@ -71,6 +82,7 @@ public class Book {
                 ", category='" + category + '\'' +
                 ", author='" + author + '\'' +
                 ", price=" + price +
+                ", amount=" + amount +
                 '}';
     }
 }
